@@ -59,11 +59,6 @@ brew install mongodb-community-shell
 
 ## mongorestore_chunks
 
-Below is a concise README description in Markdown format that outlines what the script does and how the output structure looks like. This description can be adjusted based on the specific details or additional features of your script.
-
-
-## MongoDB Chunk Restore Script
-
 ### Overview
 This script automates the restoration of MongoDB databases from dumped data batches (chunks). It's designed to work with MongoDB dumps that are organized into separate folders for each collection within a database. The script supports optional specifications of a MongoDB connection string, a specific database name, a mandatory chunks folder containing the dumped data, and an optional specific collection name for selective restoration. 
 
