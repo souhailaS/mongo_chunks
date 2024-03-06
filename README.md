@@ -61,32 +61,36 @@ brew install mongodb-community-shell
 
 Below is a concise README description in Markdown format that outlines what the script does and how the output structure looks like. This description can be adjusted based on the specific details or additional features of your script.
 
-```markdown
-# MongoDB Chunk Restore Script
 
-## Overview
+## MongoDB Chunk Restore Script
+
+### Overview
 This script automates the restoration of MongoDB databases from dumped data batches (chunks). It's designed to work with MongoDB dumps that are organized into separate folders for each collection within a database. The script supports optional specifications of a MongoDB connection string, a specific database name, a mandatory chunks folder containing the dumped data, and an optional specific collection name for selective restoration. 
 
 
 
-## Usage
-```
+### Usage
+
+```bash
 ./restore_script.sh [connection_string] <database_name> <chunks_folder> [collection_name]
 ```
+
+
 - `connection_string` (Optional): MongoDB connection string. Defaults to 'mongodb://localhost:27017'.
 - `database_name` (Mandatory): Name of the MongoDB database to restore.
 - `chunks_folder` (Mandatory): Path to the folder containing the dumped data batches.
 - `collection_name` (Optional): Name of the MongoDB collection to specifically restore. If not specified, all collections are restored.
 
-## Output Structure
+### Output Structure
 The script processes each folder within the specified `chunks_folder`, where each folder corresponds to a dumped collection named in the format `<database_name>-<collection_name>`. For each of these folders, it restores the `.bson` files found inside to the specified MongoDB database, under the collection name derived from the folder name. If a `collection_name` is specified, only the matching collection is restored. If no `collection_name` is specified, all collections are restored. 
 
 ### Example
+
 ```bash
-./restore_script.sh my_database '/Users/username/Documents/mongo_chunks'
+./mongorestore_chunks.sh my_database '/Users/username/Documents/mongo_chunks'
 ```
 
 ```bash
-./restore_script.sh my_database '/Users/username/Documents/mongo_chunks' collection_1
+./mongorestore_chunks.sh my_database '/Users/username/Documents/mongo_chunks' collection_1
 ```
 
