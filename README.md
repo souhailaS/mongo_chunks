@@ -24,6 +24,13 @@ Or if you want to restore a specific collection:
 ```
 
 
+### Requirements
+```
+brew tap mongodb/brew
+brew install mongodb-community-shell
+```
+
+
 ## mongodump_chunks
 
 ### Overview
@@ -62,16 +69,6 @@ output_folder/
 
 - **`.bson` files**: Contain the exported documents for the batch.
 - **`.metadata.json` files**: Include metadata about the export process.
-
-
-### Requirements
-```
-brew tap mongodb/brew
-brew install mongodb-community-shell
-```
-
-
-
 
 ### Example
 
