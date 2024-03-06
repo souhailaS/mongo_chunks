@@ -88,7 +88,7 @@ This script automates the restoration of MongoDB databases from dumped data batc
 ### Usage
 
 ```bash
-./restore_script.sh [connection_string] <database_name> <chunks_folder> [collection_name]
+./mongorestore_chunks.sh [connection_string] <database_name> <chunks_folder> [collection_name]
 ```
 
 
