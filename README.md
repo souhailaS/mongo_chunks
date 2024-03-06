@@ -1,10 +1,10 @@
 # mongo_chunks
 
 <p align="center">
-  <img src="images/d98743a1-123d-4627-9867-ad3490690bd8.webp" width="600" >
+  <img src="images/DALL·E 2024-03-06 20.42.29 - Create a wide illustration depicting the process of restoring a MongoDB replica set from a large database dump, incorporating the MongoDB logo. The sc.webp" width="700" >
 </p>
 
-How to use :
+### How to use :
 
 - export the data from the mongo db using the mongodump_chunks.sh script
 
