@@ -1,6 +1,8 @@
 # mongo_chunks
-<!-- ![alt text](images/d98743a1-123d-4627-9867-ad3490690bd8.webp) -->
-<img src="images/d98743a1-123d-4627-9867-ad3490690bd8.webp" width="600" >
+
+<p align="center">
+  <img src="images/d98743a1-123d-4627-9867-ad3490690bd8.webp" width="600" >
+</p>
 
 How to use :
 
