@@ -1,5 +1,28 @@
 # mongo_chunks
 
+How to use :
+
+- export the data from the mongo db using the mongodump_chunks.sh script
+
+*Example*
+```bash
+./mongodump_chunks.sh  my_database collection_1  '/Users/username/Documents/mongo_chunks' 1000
+```
+1000 is the number of documents per chunk. This can be adjusted based on the available system resources and the desired size of the exported batches. Smaller chunks may be more manageable for processing and transferring, while larger chunks may be less memory-efficient at restoration time.
+
+- restore the data using the mongorestore_chunks.sh script
+
+*Example*
+```bash
+./mongorestore_chunks.sh my_database '/Users/username/Documents/mongo_chunks'
+```
+
+Or if you want to restore a specific collection:
+
+```bash
+./mongorestore_chunks.sh my_database '/Users/username/Documents/mongo_chunks' collection_1
+```
+
 
 ## mongodump_chunks
 
@@ -61,7 +84,6 @@ brew install mongodb-community-shell
 
 ### Overview
 This script automates the restoration of MongoDB databases from dumped data batches (chunks). It's designed to work with MongoDB dumps that are organized into separate folders for each collection within a database. The script supports optional specifications of a MongoDB connection string, a specific database name, a mandatory chunks folder containing the dumped data, and an optional specific collection name for selective restoration. 
-
 
 
 ### Usage
