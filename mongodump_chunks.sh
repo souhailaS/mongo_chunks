@@ -11,18 +11,32 @@ print_usage() {
 }
 
 # Validate number of arguments
-if [ "$#" -lt 4 ] || [ "$#" -gt 5 ]; then
+if [ "$#" -lt 3 ] || [ "$#" -gt 5 ]; then
     print_usage
     exit 1
 fi
 
-# Assign command-line arguments to variables, with a default connection string
+# Assign mandatory arguments to variables
 DB_NAME="$1"
 COLLECTION_NAME="$2"
 OUTPUT_FOLDER="$3"
-DOCS_PER_CHUNK="${4:-1000}"  # Default to 1000 if no value is provided
-CONNECTION_STRING="${5:-mongodb://localhost:27017}"  # Default to localhost if no connection string is provided
 
+# Initialize optional parameters with their default values
+DOCS_PER_CHUNK=1000
+CONNECTION_STRING="mongodb://localhost:27017"
+
+# Process optional arguments
+for arg in "${@:4}"; do
+    if [[ $arg =~ ^mongodb:// || $arg =~ ^mongodb+srv:// ]]; then
+        CONNECTION_STRING=$arg
+    elif [[ $arg =~ ^[0-9]+$ ]]; then
+        DOCS_PER_CHUNK=$arg
+    else
+        echo "Invalid argument: $arg"
+        print_usage
+        exit 1
+    fi
+done
 
 # get host from connection string
 HOST=$(echo $CONNECTION_STRING | awk -F/ '{print $3}' | awk -F: '{print $1}')
