@@ -1,7 +1,7 @@
 # mongo_chunks
 
 <p align="center">
-  <img src="images/DALL·E 2024-03-06 20.42.29 - Create a wide illustration depicting the process of restoring a MongoDB replica set from a large database dump, incorporating the MongoDB logo. The sc.webp" width="700" >
+  <img src="images/image.webp" width="700" >
 </p>
 
 ### How to use :
