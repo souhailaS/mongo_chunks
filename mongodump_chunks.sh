@@ -6,7 +6,7 @@ print_usage() {
     echo "  database_name: Name of the MongoDB database from which documents are exported."
     echo "  collection_name: Name of the MongoDB collection to export."
     echo "  output_folder: Path to the folder where the exported data batches will be stored."
-    echo "  documents_per_chunk: Number of documents per output batch."
+    echo "  documents_per_chunk (optional): Number of documents per output batch. Defaults to 1000 if not provided."
     echo "  connection_string (Optional): MongoDB connection string. Defaults to 'mongodb://localhost:27017' if not provided."
 }
 
@@ -20,7 +20,7 @@ fi
 DB_NAME="$1"
 COLLECTION_NAME="$2"
 OUTPUT_FOLDER="$3"
-DOCS_PER_CHUNK="$4"
+DOCS_PER_CHUNK="${4:-1000}"  # Default to 1000 if no value is provided
 CONNECTION_STRING="${5:-mongodb://localhost:27017}"  # Default to localhost if no connection string is provided
 
 
